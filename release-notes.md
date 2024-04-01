@@ -1,13 +1,7 @@
-Changes since v1.3.3 include
-- add FA mlat results to ultrafeeder
-- fix: never use more than one SDR data input source for ultrafeeder
-- allow user provided env vars for sdrplay container
-- update lsusb output box when 'check SDRs' is clicked
-- lsusb output box has more verbose info for easier debugging
-- make 'other' checkbox for SDRs stick when selected
-- fix routeAPI not working
-- fix FR24 sometimes being displayed in aggregator links when not enabled
-- show SDRplay SDR as 1090 receiver on the advanced page
+Changes since v1.3 include
+- introduction of a full stage 2 mode that allows separating data collection (the antenna / SDR) and data distribution (feeding the aggregators) between different systems, with one stage 2 instances collecting and sharing data from multiple (micro) feeders
+- significant changes to the web UI to support integrated instances (how things used to be), micro feeders, and stage 2 instances
+- (under the hood) significant changes to the storage format for config settings; it should be transparent during an upgrade, but once upgraded, a downgrade is not possible
 
 > [!NOTE]
 > Based on the available usage information, I have significantly reduced the number of images provided here. If there's one that you need for a different SBC which is supported either by Armbian or DietPi, please post a request on the [Zulip server](https://adsblol.zulipchat.com/#narrow/stream/391168-adsb-feeder-image)
