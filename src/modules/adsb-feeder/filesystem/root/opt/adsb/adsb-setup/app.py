@@ -632,9 +632,6 @@ class AdsbIm:
         used_serials = {
             self._d.env_by_tags(f).value for f in self._sdrdevices.purposes()
         }
-        used_serials = {
-            self._d.env_by_tags(f).value for f in self._sdrdevices.purposes()
-        }
         for f in [978, 1090]:
             if not serials[f] and serial_guess[f] not in used_serials:
                 serials[f] = serial_guess[f]
@@ -1193,10 +1190,6 @@ class AdsbIm:
             print_err(
                 f"dump978 container {self._d.is_enabled(['uat978', 'is_enabled'])}"
             )
-        # finally, set a flag to indicate whether this is a stage 2 configuration or whether it has actual SDRs attached
-        self._d.env_by_tags(["stage2", "is_enabled"]).value = (
-            not env1090.value and not env978.value
-        )
 
         # set all of the ultrafeeder config data up
         for i in range(1 + self._d.env_by_tags("num_micro_sites").value):
